@@ -3,13 +3,16 @@ $(document).ready(function(){
     $(window).scroll(function(){
         scrollTop = $(window).scrollTop();
         if (scrollTop > 0){
-            $('.navbar').addClass('scrollNav');
-        }else if(scrollTop == 0){
+            $('.navbar').addClass ('scrollNav');
+            $('#backToTop').addClass('visible');
+        }else if (scrollTop == 0){
             $('.navbar').removeClass('scrollNav');
-        } 
+            $('#backToTop').removeClass('visible');
+        }
     });
-    $(backToTop).scroll(function(){
-        $('body,html').animate({
-            scrollTop:0},800);
-        });
+       $('#backToTop').click(function(){
+        $('body,html').animate({scrollTop:0},'800')
+        
+    });
+
 });
